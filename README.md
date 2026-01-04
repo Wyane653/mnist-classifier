@@ -189,6 +189,9 @@ config = {
 checkpoint = torch.load('models/simple_cnn_best.pth')
 model.load_state_dict(checkpoint['model_state_dict'])
 ```
+
+### 🎬 项目演示与结果
+
 ### 📈 可视化示例
 评估脚本生成三种关键可视化图表：  
 1.*逐类别准确率*:显示每个数字（0-9）准确率的条形图  
