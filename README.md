@@ -27,20 +27,27 @@ A complete, modular, and production-ready PyTorch implementation for MNIST handw
 - Extensible Codebase: Easy to add new models, datasets, or evaluation metrics
 
 ### 📁 Project Structure
->mnist_classifier/  
->├── src/                    # Source code  
->│   ├── train.py           # Main training script  
->│   ├── evaluate.py        # Model evaluation and analysis  
->│   ├── model.py           # CNN model definitions  
->│   ├── dataset.py         # Data loading and preprocessing  
->│   └── utils.py           # Utilities (visualization, checkpointing)  
->├── notebooks/             # Jupyter notebooks  
->│   └── exploration.ipynb  # Exploratory data analysis  
->├── models/                # Saved model checkpoints (.pth files)  
->├── data/                  # MNIST dataset (auto-downloaded)  
->├── runs/                  # TensorBoard logs  
->├── requirements.txt       # Dependencies  
->└── README.md             # This file
+>mnist-classifier/  
+>├── demo/                       # Demo media library  
+>│   ├── realtime_demo.gif       # Live demo GIF  
+>│   ├── confusion_matrix.png    # Confusion Matrix  
+>│   ├── accuracy.png            # Accuracy by category  
+>│   ├── error_analysis.png      # Error Analysis  
+>│   └── train_py.png            # Training History  
+>├── src/                        # Source code  
+>│   ├── train.py                # Main training  
+>│   ├── evaluate.py             # Model evaluation and analysis  
+>│   ├── model.py                # CNN model definitions  
+>│   ├── dataset.py              # Data loading and preprocessing  
+>│   ├── utils.py                # utilities(visualization, checkpointing)  
+>│   └── realtime_opencv.py      # Live demo script  
+>├── notebooks/                  # Jupyter notebooks   
+>│   └── exploration.ipynb       # Exploratory data analysis  
+>├── models/                     # Saved model checkpoints(.pth files)  
+>├── data/                       # MNIST dataset(auto-downloaded)  
+>├── requirements.txt            # Dependencies  
+>├── README.md                   # This file  
+>└── .gitignore                  # Make sure it is configured correctly  
 
 ### 🚀 Quick Start
 #### 1. Installation
@@ -144,6 +151,9 @@ This interactive demo perfectly bridges the training pipeline and the static eva
 - Observe how subtle changes in your drawing affect the prediction confidence.
 - Showcase the project's capabilities in an engaging way.
 
+### Project Gallery
+In order for readers to directly observe the operation of this project, a demonstration GIF and images will be provided at the end of this document.
+
 
 ## 中文版本
 ### 📌 项目概述
@@ -158,20 +168,27 @@ This interactive demo perfectly bridges the training pipeline and the static eva
 - *可扩展代码库*:易于添加新模型、数据集或评估指标
 
 ### 📁 项目结构
->mnist_classifier/  
->├── src/                    # Source code  
->│   ├── train.py           # Main training script  
->│   ├── evaluate.py        # Model evaluation and analysis  
->│   ├── model.py           # CNN model definitions  
->│   ├── dataset.py         # Data loading and preprocessing  
->│   └── utils.py           # Utilities (visualization, checkpointing)  
->├── notebooks/             # Jupyter notebooks  
->│   └── exploration.ipynb  # Exploratory data analysis  
->├── models/                # Saved model checkpoints (.pth files)  
->├── data/                  # MNIST dataset (auto-downloaded)  
->├── runs/                  # TensorBoard logs  
->├── requirements.txt       # Dependencies  
->└── README.md             # This file
+>mnist_classifier/
+>├── demo/                       # 演示媒体库  
+>│   ├── realtime_demo.gif       # 实时演示 GIF  
+>│   ├── confusion_matrix.png    # 混淆矩阵  
+>│   ├── accuracy.png            # 按类别的准确率  
+>│   ├── error_analysis.png      # 错误分析  
+>│   └── train_py.png            # 训练历史  
+>├── src/                        # 源码  
+>│   ├── train.py                # 主训练脚本  
+>│   ├── evaluate.py             # 模型评估和分析  
+>│   ├── model.py                # 卷积神经网络模型定义  
+>│   ├── dataset.py              # 数据加载与预处理  
+>│   └── utils.py                # 工具（可视化，检查点）  
+>│   └── realtime_opencv.py      # 实时演示脚本  
+>├── notebooks/                  # Jupyter 笔记本  
+>│   └── exploration.ipynb       # 探索性数据分析  
+>├── models/                     # 已保存的模型检查点（.pth 文件）  
+>├── data/                       # MNIST 数据集（自动下载）  
+>├── runs/                       # TensorBoard 日志  
+>├── requirements.txt            # 依赖  
+>└── README.md                   # 说明文档
 
 ### 🚀 快速开始
 #### 1. 安装
@@ -272,3 +289,25 @@ model.load_state_dict(checkpoint['model_state_dict'])
 - 直观理解模型的优势和薄弱环节。
 - 观察绘图的细微变化如何影响预测置信度。
 - 以一种引人入胜的方式展示项目成果。
+
+### 项目演示画廊
+为了让读者能直观地观察到本项目运行，在此文档末尾会提供演示的GIF和图片。
+
+### 🎬 Project Gallery | 项目演示画廊
+#### Model Training Record | 模型训练实录
+The following shows the trends of loss and accuracy during the model training process.  
+以下是模型训练过程中的损失和准确率变化趋势。  
+![实时识别演示](./demo/train_py.gif)
+#### Interactive Demo in Action | 交互演示实录
+Below is a screen recording of the real-time digit recognition demo. You can draw digits and see the model's predictions update instantly.  
+以下为实时数字识别演示的屏幕录制。你可以绘制数字并实时查看模型的预测结果。  
+![实时识别演示](./demo/realtime_demo.gif)
+#### Key Visualizations | 核心可视化结果
+These visualizations are generated automatically by the evaluation script (`python src/evaluate.py`).  
+以下可视化图表均由评估脚本 (`python src/evaluate.py`) 自动生成。  
+1、![混淆矩阵](./demo/confusion_matrix.png)  
+- Purpose/目的：Shows which digits are most commonly confused by the model./展示模型最常混淆哪些数字。  
+2、![每个类别的准确率](./demo/accuracy.png)
+- Purpose/目的：Displays the model's accuracy for each digit (0-9)./显示模型对每个数字（0-9）的识别准确率。  
+3、![错误样本分析](./demo/error_analysis.png)
+- Purpose/目的：Examines specific cases where the model made mistakes./分析模型出现错误的具体案例。
